@@ -1,1 +1,2 @@
-# ChronicKidneyDiseasePrediction-main
+# __Chronic Kidney Disease Prediction__
+The challenge is aimed at making use of machine learning in predicting chronic kidney disease. Chronic kidney disease (CKD) is a major burden on the healthcare system because of its increasing prevalence, high risk of progression to end-stage renal disease, and poor morbidity and mortality prognosis.  Our approach offers a methodology for predicting CKD status using clinical data, which incorporates data preprocessing, a technique for managing missing values, data aggregation, and feature extraction.

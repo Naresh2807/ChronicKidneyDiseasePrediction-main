@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title of the project -->
+    <title>CHRONIC KIDNEY DISEASE PREDICTION</title>
+
+    <!-- favicon of the project -->
+    <link rel="icon" type="image/png" href="static/images/kidneyicon.png">
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Montserrat google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}">
+</head>
+
+<body>
+    <div data-bot-id="272514">
+    </div>
+
+    <!------------------------------ first page ---------------------------->
+    <header class="firstpage">
+        <!------------------------------ navbar -------------------------------->
+        <nav class="my-nav navbar navbar-expand-lg px-4">
+            <!-- left side of the navbar -->
+            <div class="container-fluid">
+                <a class="navbar-brand fs-2 nav-link" href="/">
+                    <img class="kidneyicon" src="{{url_for('static', filename='images/kidneyicon.png')}}" alt="kidneyicon"> RENAL
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- right side of the navbar -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-4">
+                    <li class="nav-item px-4 mt-2">
+                        <a class="nav-link" aria-current="page"
+                            href="https://raw.githubusercontent.com/Jeevitha10/ChronicKidneyDiseasePrediction/main/kidney_disease.csv"
+                            target="_blank">Dataset</a>
+                    </li>
+
+                    <li class="nav-item px-4 mt-2">
+                        <a class="nav-link" href="#attr">Terms</a>
+                    </li>
+
+                    <li class="nav-item px-4 mt-2">
+                        <a class="nav-link" href="{{ url_for('accuracy')}}">Accuracy</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="btn btn-danger fs-4 px-5 py-2" href="#formpage" role="button">Predict</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!------------------------------ end of navbar -------------------------------->
+
+        <!---------------------------- body content ----------------------->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{url_for('static', filename='images/kidney.jpg')}}" class="d-block w-100" alt="ckd">
+
+                    <div class="carousel-caption d-md-block">
+                        <h3 class="subtitle">CHRONIC KIDNEY DISEASE</h3>
+
+                        <p class="desc">Chronic kidney disease (CKD) means your kidneys are damaged and can't filter blood the way they should.
+                            The disease is called “chronic” because the damage to your kidneys happens slowly over a long period of time.
+                            This damage can cause wastes to build up in your body. CKD can also cause other health problems.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="{{url_for('static', filename='images/challenges.jpg')}}" class="d-block w-100" alt="challenges">
+
+                    <div class="carousel-caption d-md-block">
+                        <h3 class="subtitle">CHALLENGES</h3>
+
+                        <p class="desc">Complications from CKD produce system-wide symptoms. Some of the more common include anemia, heart disease,
+                            high calcium levels, and bone disease. There are five stages of CKD beginning with mild damage in Stage 1
+                            to complete failure in Stage 5.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="{{url_for('static', filename='images/reports.jpg')}}" class="d-block w-100" alt="reports">
+
+                    <div class="carousel-caption d-md-block">
+                        <h3 class="subtitle">MOTIVE</h3>
+
+                        <p class="desc">Chronic Kidney Disease (CKD) is a life-threatening condition that affects nearly 14% of the world's population,
+                            predicting it with the utmost accuracy allows people to be diagnosed  and treated at the lowest possible cost and risk. </p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!---------------------------- end of body content ----------------------->
+    </header>
+    <!---------------------------- end of first page ---------------------------->
+
+    <!---------------------------- second page ---------------------------------->
+    <section class="secondpage" id="formpage">
+        <h2 class="titles">CHRONIC KIDNEY DISEASE PREDICTION</h2>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <section class="left">
+                <div class="input-container">
+                    <label for="bp">Blood pressure(mm/Hg)</label>
+
+                    <input type="number" name="bp" placeholder="Enter a value" required/>
+                </div>
+
+                <div class="input-container">
+                    <label for="al">Albumin</label>
+
+                    <select name="al" required>
+                        <option disabled selected value> -- select an option -- </option>
+
+                        {%for i in range(0, 6)%}
+                        <option value={{i}}>{{i}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="su">Sugar</label>
+
+                    <select name="su" required>
+                        <option disabled selected value> -- select an option -- </option>
+
+                        {%for i in range(0, 6)%}
+                        <option value={{i}}>{{i}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="rbc">Red Blood Cells</label>
+
+                    <select name="rbc" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="2">Normal</option>
+
+                        <option value="1">Abnormal</option>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="pc">Pus Cells</label>
+
+                    <select name="pc" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="2">Normal</option>
+
+                        <option value="0">Abnormal</option>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="bgr">Blood glucose random(mgs/dl)</label>
+
+                    <input type="number" name="bgr" placeholder="Enter a value" required/>
+                </div>
+            </section>
+
+            <section class="right">
+                <div class="input-container">
+                    <label for="sc">Serum Creatinine(mgs/dl)</label>
+
+                    <input type="number" name="sc" step="any" placeholder="Enter a value" required/>
+                </div>
+
+                <div class="input-container">
+                    <label for="pot">Potassium(mEq/L)</label>
+
+                    <input type="number" name="pot" step="any" placeholder="Enter a value" required/>
+                </div>
+
+                <div class="input-container">
+                    <label for="hemo">Hemoglobin(gms)</label>
+
+                    <input type="number" name="hemo" step="any" placeholder="Enter a value" required/>
+                </div>
+
+                <div class="input-container">
+                    <label for="htn">Hypertension</label>
+
+                    <select name="htn" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="2">Yes</option>
+
+                        <option value="1">No</option>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="appet">Appetite</label>
+
+                    <select name="appet" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="0">good</option>
+
+                        <option value="2">poor</option>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="pe">Pedal edema</label>
+
+                    <select name="pe" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="2">Yes</option>
+
+                        <option value="1">No</option>
+                    </select>
+                </div>
+            </section>
+
+            <input class="btn btn-danger fs-4 px-3 py-2 submitbtn" type="submit" value="Predict" onclick="return true" />
+        </form>
+    </section>
+    <!---------------------------- end of second page(form) ---------------------------->
+
+    <!---------------------------- attributes used in the prediction ------------------->
+    <div>
+        <h2 class="titles" id="attr">ATTRIBUTES USED IN THE PREDICTION</h2>
+
+        <section class="wrapper">
+
+            <div class="card">
+                <h3 class="card-title">BLOOD PRESSURE</h3>
+
+                <p class="card-content">Improving Global Outcomes (KDIGO) guideline recommends BP ≤ 140/90 mmHg for CKD patients 
+                    with urine albumin excretion rate < 30 mg/24 h and ≤ 130/80 mmHg for CKD patients with 
+                    moderately or severely increased albuminuria</p>
+                <a class="card-btn" href='https://kdigo.org/guidelines/blood-pressure-in-ckd/' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">BLOOD GLUCOSE RANDOM</h3>
+
+                <p class="card-content">A person with CKD is at risk for low blood sugar because of changes in 
+                    appetite and meal routine. When kidney function declines insulin and other diabetes medications 
+                    remain in the system longer because of decreased kidney clearance.</p>
+                <a class="card-btn" href='https://www.davita.com/education/kidney-disease/risk-factors/high-blood-sugar-and-chronic-kidney-disease' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">POTASSIUM</h3>
+
+                <p class="card-content">People with chronic kidney disease (CKD) have a high risk for hyperkalemia, 
+                    due in part to the effects of kidney dysfunction on potassium homeostasis. It is reported that hyperkalemia frequency is as high as 40-50% in
+                    people with chronic kidney disease .</p>
+                <a class="card-btn" href='https://www.davita.com/diet-nutrition/articles/basics/potassium-and-chronic-kidney-disease' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">ALBUMIN</h3>
+
+                <p class="card-content">Albumin provides the body with the protein needed 
+                to both maintain growth and repair tissues.If your albumin level is good, fluid will move more easily 
+                from swollen tissues into the blood, where it can then 
+                be removed by the dialyzer. </p>
+                <a class="card-btn" href='https://www.dpcedcenter.org/news-events/news/albumin-and-chronic-kidney-disease/' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">HEMOGLOBIN</h3>
+
+                <p class="card-content">Low hemoglobin can be a marker for the severity of kidney disease. However, in people with CKD, the 
+                    mean GFR of those with low hemoglobin was 44.7 ml/min per 1.73 m2, 
+                    compared with a mean GFR of 49.2 ml/min per 1.73 m2 in people with higher hemoglobin.</p>
+
+                <a class="card-btn" href='https://www.niddk.nih.gov/health-information/kidney-disease/anemia#:~:text=Anemia%20in%20people%20with%20CKD,to%20make%20red%20blood%20cells.' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">RBC COUNT</h3>
+
+                <p class="card-content">When your kidneys are damaged, they produce less erythropoietin(EPO), a hormone that signals your 
+                    bone marrow to make red blood cells. 
+                    With less EPO, your body makes fewer red blood cells, and less oxygen is delivered to your organs and tissues.</p>
+                <a class="card-btn" href='https://www.kidney.org/atoz/content/what_anemia_ckd' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">SUGAR</h3>
+
+                <p class="card-content">High sugar levels in the blood can cause kidney vessels to become narrow and clogged. 
+                    Without enough blood, the kidneys become damaged and albumin (a type of protein) 
+                    passes through these filters and ends up in the urine where it should not be. Nerves in your body.</p>
+                <a class="card-btn" href='https://www.kidney.org/atoz/content/Diabetes-and-Kidney-Disease-Stages1-4' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">PUS CELL</h3>
+
+                <p class="card-content">When the body detects an infection, it sends neutrophils to destroy the fungi or bacteria.
+                    During this process, some of the neutrophils and tissue surrounding the infected area will die. 
+                    Pus is an accumulation of this dead material. Many types of infection can cause pus.</p>
+                <a class="card-btn" href='https://doctor.ndtv.com/faq/do-large-number-of-pus-cells-in-urine-harm-the-kidneys-13337' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">SERUM CREATININE</h3>
+
+                <p class="card-content">A serum creatinine level of greater than 1.2 for women and greater than 1.4 
+                for men may be an early sign that the kidneys are not working properly. Several factors can cause high creatinine levels. 
+                As kidney disease progresses, the level of serum creatinine in the blood rises.</p>
+                <a class="card-btn" href='https://www.kidney.org/atoz/content/what-creatinine' target="_blank">READ MORE</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">APPETITE</h3>
+
+                <p class="card-content">Anorexia is common in patients with CKD and may result from alterations in orexigenic (appetite stimulating) and 
+                    anorexigenic (appetite inhibiting) 
+                    hormones, accumulation of metabolic waste products in the body in kidney failure and
+                    abnormal taste. </p>
+                <a class="card-btn" href='https://www.davita.com/diet-nutrition/articles/basics/dealing-with-appetite-problems-for-dialysis-patients' target="_blank">READ MORE</a>
+            </div>
+            <div class="card">
+                <h3 class="card-title">PEDAL EDEMA</h3>
+
+                <p class="card-content">Bilateral pedal edema is the most common symptom in chronic kidney diseased patients. It occurs due to the loss of 
+                    functioning of the kidney. This may lead to fluid 
+                    accumulation in the body and also an accumulation of excretory products or waste products increases in blood.</p>
+                <a class="card-btn" href='https://www.openaccessjournals.com/articles/cilnidipine-adverse-effect-in-hypertensive-chronic-kidney-disease-patient-with-pedal-edema-a-case-report-12941.html#:~:text=Bilateral%20pedal%20edema%20is%20the,levels%20are%20increases%20in%20blood' target="_blank">READ MORE</a>
+            </div>
+            <div class="card">
+                <h3 class="card-title">HYPER TENSION</h3>
+
+                <p class="card-content">Hypertension is both a cause and effect of CKD and affects the vast majority of CKD patients. High blood pressure 
+                    can make your kidneys worser. Control of hypertension is important in those with CKD as it leads to 
+                    slowing of disease progression as well as reduced CVD risk. </p>
+                <a class="card-btn" href='https://www.ajkd.org/article/S0272-6386(19)30094-0/fulltext' target="_blank">READ MORE</a>
+            </div>
+        </section>
+    </div>
+    <!---------------------------- end of attribute page ---------------------------->
+
+    <!---------------------------- footer ------------------------------------------->
+    <footer class="new_footer_area bg_color">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-5">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s"
+                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">References</h3>
+
+                            <ul class="list-unstyled f_list">
+                                <li><a href="https://ieeexplore.ieee.org/document/9094581" target="_blank">Prediction of CKD</a></li>
+
+                                <li><a href="https://ieeexplore.ieee.org/document/9525378" target="_blank">Comprehensive
+                                        unsupervised</a></li>
+
+                                <li><a href="https://ieeexplore.ieee.org/document/9543546" target="_blank">Early prediction</a></li>
+
+                                <li><a href="https://ieeexplore.ieee.org/document/8239857" target="_blank">Identifying important
+                                        attributes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+ <div>
+        <h2 style="text-align: center;">Our Team</h2>
+        <ul class="team-members" style="list-style-type: none; display: flex; justify-content: space-around; padding: 20px;">
+            <li style="text-align: center; list-style: none; margin: 20px;">
+                <img src="image" alt="Team Member 1" style="width: 200px; height: 200px; border-radius: 60%; object-fit: cover; border: 3px solid #fff;">
+                <h3 style="margin-top: 10px; font-size: 1.2em;">Muthu krishnan.G</h3>
+                <p style="color: #555;">Backend Developer</p>
+            </li>
+            <li style="text-align: center; list-style: none; margin: 20px;">
+                <img src="image" alt="Team Member 2" style="width: 200px; height: 200px; border-radius: 60%; object-fit: cover; border: 3px solid #fff;">
+                <h3 style="margin-top: 10px; font-size: 1.2em;">Mani.S</h3>
+                <p style="color: #555;">Python Developer</p>
+            </li>
+            <li style="text-align: center; list-style: none; margin: 20px;">
+                <img src="image" alt="Team Member 3" style="width: 200px; height: 200px; border-radius: 60%; object-fit: cover; border: 3px solid #fff;">
+                <h3 style="margin-top: 10px; font-size: 1.2em;">Jawahar adithya.B</h3>
+                <p style="color: #555;">Web Developer</p>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+            <div class="footer_bg">
+                <div class="footer_bg_one"></div>
+                <div class="footer_bg_two"></div>
+            </div>
+        </div>
+
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-7">
+                        <p class="mb-0 f_400">© Team project 2022 All rights reserved.</p>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-5 text-right">
+                        <p>Students of <a href="https://www.svce.ac.in/" target="_blank">SVCE</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---------------------------- end of footer ---------------------------->
+
+    <!---------------------------- bootstrap script ------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+    <!-------------------------- chatbot script ---------------------------->
+    <script src="https://account.snatchbot.me/script.js"></script>
+    <script>window.sntchChat.Init(272514)</script>
+
+</body>
+</html>

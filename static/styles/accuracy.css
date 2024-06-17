@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 300px;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: #c7dbfb;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  overflow: hidden;
+}
+
+/******************* accuracy page styling ***********************/
+.accuracy {
+  position: absolute;
+  right: 40px;
+  margin-top: 4px;
+  width: 20rem;
+}
+
+.accuracy-left {
+  position: absolute;
+  left: 40px;
+  margin-top: 4px;
+  width: 20rem;
+}
+
+.kidneyaffected {
+  position: absolute;
+  left: 40px;
+  margin-top: 4px;
+  width: 20rem;
+}
+
+.resulticon {
+  position: absolute;
+  left: 40px;
+  margin-top: 20px;
+  width: 4rem;
+}
+
+.accuracyicon {
+  width: 3rem;
+}
+
+.btn {
+  position: absolute;
+  right: 40px;
+  margin-top: 20px;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.title {
+  padding: 2rem 0;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.bar {
+  text-align: center;
+  margin-top: 60px;
+  margin-right: 10px;
+  margin-left: 100px;
+}
+
+.progress {
+  width: 150px;
+  height: 150px !important;
+  float: left;
+  line-height: 150px;
+  background: none;
+  margin: 20px;
+  box-shadow: none;
+  position: relative;
+}
+
+.progress:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 12px solid rgb(198, 197, 197);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.progress .progress-left {
+  left: 0;
+}
+
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 12px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.progress .progress-right {
+  right: 0;
+}
+
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  animation: loading-1 1.8s linear forwards;
+}
+
+.progress .progress-value {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: #000;
+  font-size: 24px;
+  color: rgb(241, 223, 223);
+  line-height: 135px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.label{
+  position: absolute;
+  font-size: 20px;
+  z-index: 999;
+  top: 30px;
+  left: 50px;
+}
+.label-ex{
+  left: 30%;
+}
+.progress.blue .progress-bar {
+  border-color: #049dff;
+}
+
+.progress.blue .progress-left .progress-bar {
+  animation: loading-4 1.8s linear forwards 1.8s;
+}
+
+.progress.yellow .progress-bar {
+  border-color: #fdba04;
+}
+
+.progress.yellow .progress-left .progress-bar {
+  animation: loading-3 1.8s linear forwards 1.8s;
+}
+
+.progress.green .progress-bar {
+  border-color: green;
+}
+
+.progress.green .progress-left .progress-bar {
+  animation: loading-2 1.8s linear forwards 1.8s;
+}
+
+@keyframes loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes loading-2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(140deg);
+    transform: rotate(140deg);
+  }
+}
+
+@keyframes loading-3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(154deg);
+    transform: rotate(154deg);
+  }
+}
+
+@keyframes loading-4 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(172deg);
+    transform: rotate(172deg);
+  }
+}
+
+/************************* end of accuracy page styling **********************/
+
+/****************************** footer styling ******************************/
+.new_footer_top {
+  padding: 150px 0px 200px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.new_footer_top .footer_bg {
+  position: absolute;
+  bottom: 0;
+  background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0R7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png") no-repeat scroll center 0;
+  width: 100%;
+  height: 266px;
+}
+
+/****************************** end of footer styling ***********************/
+
+/****************************** chat bot styling ************************/
+#sntch_button{
+  position:absolute;
+  bottom: 45px !important;
+  right: 45px !important;
+}
+
+/****************************** end of chat bot styling ************************/
+
+/****************************** responsiveness ******************************/
+@media (max-width: 920px) {
+  .backbtn {
+    top: 5rem;
+    padding: 3px 5px !important;
+    font-size: 18px !important;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .resulticon {
+    display: none;
+  }
+}
+
+@media (max-width: 650px){
+  .accuracy, .accuracy-left{
+    display: none;
+  }
+
+  .bar{
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1170px){
+  .accuracy, .accuracy-left{
+    margin-top: 7rem !important ;
+  }
+}
+/****************************** end of responsiveness ******************************/

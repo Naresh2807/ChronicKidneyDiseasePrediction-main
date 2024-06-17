@@ -1,0 +1,162 @@
+  * {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+/*********************** result page styling *************************/
+.resulticon {
+  position:absolute;
+  left: 40px;
+  margin-top: 20px;
+  width: 4rem;
+}
+
+.kidneyicon {
+  width: 3rem;
+}
+
+.btn{
+  position:absolute;
+  right: 40px;
+  margin-top: 20px;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.title{
+  padding: 2rem 0;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+svg {
+  width: 100px;
+  display: block;
+  margin: 40px auto 0;
+}
+
+.errorgif{
+  width: 250px;
+  margin-top: -80px;
+}
+
+.successgif{
+  width: 250px;
+  margin-top: -80px;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.path.circle {
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out;
+}
+
+.path.line {
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+
+.path.check {
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 2rem;
+  margin-top: -20px;
+}
+
+p.success {
+  color: #73AF55;
+  font-weight:bolder;
+}
+
+p.error {
+  color: #dc3545;
+  font-weight: bolder;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+#sntch_button{
+  position:absolute;
+  bottom: 50px !important;
+  right: 50px !important;
+}
+
+/*********************** end of result page styling **************************/
+
+/****************************** chat bot styling *****************************/
+#sntch_button{
+  position:absolute;
+  bottom: 50px !important;
+  right: 50px !important;
+}
+
+/****************************** end of chat bot styling ************************/
+
+/****************************** responsiveness ******************************/
+@media (max-width: 920px) {
+  .backbtn{
+    top: 5rem;
+    padding: 3px 5px !important;
+    font-size: 18px !important;
+  }
+
+  .title{
+    font-size: 2rem;
+  }
+
+  .resulticon{
+    display: none;
+  }
+
+}
+/****************************** end of responsiveness ******************************/
